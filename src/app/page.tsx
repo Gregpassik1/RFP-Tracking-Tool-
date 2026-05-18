@@ -51,7 +51,7 @@ export default async function Home() {
         ) : (
           <div className="space-y-3">
             {rfps.map((rfp) => {
-              const questions = rfp.questions as Array<Record<string, unknown>>;
+              const questions = rfp.questions as unknown as Array<Record<string, unknown>>;
               return (
                 <Link
                   key={rfp.id}
