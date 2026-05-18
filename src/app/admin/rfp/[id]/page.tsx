@@ -30,7 +30,7 @@ export default async function RfpDetail({
 
   if (!rfp) notFound();
 
-  const questions = rfp.questions as Question[];
+  const questions = rfp.questions as unknown as Question[];
 
   return (
     <div className="min-h-screen">
