@@ -128,7 +128,7 @@ export default async function RfpDetail({
         ) : (
           <div className="space-y-4">
             {rfp.responses.map((response) => {
-              const answers = response.answers as Answer[];
+              const answers = response.answers as unknown as Answer[];
               return (
                 <div key={response.id} className="card">
                   <div className="flex items-start justify-between mb-4">
