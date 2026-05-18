@@ -40,7 +40,7 @@ export default async function RfpPage({
     );
   }
 
-  const questions = rfp.questions as Question[];
+  const questions = rfp.questions as unknown as Question[];
 
   return (
     <div className="min-h-screen">
