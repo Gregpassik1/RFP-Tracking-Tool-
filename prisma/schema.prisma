@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Rfp {
+  id          String     @id @default(cuid())
+  title       String
+  description String?
+  questions   Json       // Array of { id, text, type, options? }
+  status      String     @default("active") // active, closed
+  createdAt   DateTime   @default(now())
+  responses   Response[]
+}
+
+model Response {
+  id         String   @id @default(cuid())
+  rfpId      String
+  rfp        Rfp      @relation(fields: [rfpId], references: [id])
+  vendorName String
+  vendorEmail String
+  answers    Json     // Array of { questionId, value }
+  score      Int?
+  notes      String?
+  submittedAt DateTime @default(now())
+}

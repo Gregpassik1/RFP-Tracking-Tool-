@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "DM Sans", system-ui, sans-serif;
+  --font-display: "Instrument Serif", Georgia, serif;
+  --color-navy-950: #0a0f1e;
+  --color-navy-900: #111833;
+  --color-navy-800: #1a2344;
+  --color-navy-700: #253055;
+  --color-slate-100: #f1f3f8;
+  --color-slate-200: #e2e5ed;
+  --color-slate-300: #c8cdd9;
+  --color-slate-400: #9aa0b4;
+  --color-amber-400: #f6b93b;
+  --color-amber-500: #e5a12b;
+  --color-emerald-400: #4cd790;
+  --color-emerald-600: #28a065;
+  --color-red-400: #f27474;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    background: var(--color-navy-950);
+    color: var(--color-slate-100);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  .card {
+    background: var(--color-navy-900);
+    border: 1px solid var(--color-navy-700);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+
+  .btn-primary {
+    background: var(--color-amber-400);
+    color: var(--color-navy-950);
+    font-weight: 600;
+    padding: 0.625rem 1.25rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background 0.15s;
+    border: none;
+  }
+  .btn-primary:hover {
+    background: var(--color-amber-500);
+  }
+
+  .btn-secondary {
+    background: var(--color-navy-700);
+    color: var(--color-slate-100);
+    font-weight: 500;
+    padding: 0.625rem 1.25rem;
+    border-radius: 8px;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background 0.15s;
+    border: 1px solid var(--color-navy-700);
+  }
+  .btn-secondary:hover {
+    background: var(--color-navy-800);
+    border-color: var(--color-slate-400);
+  }
+
+  .input {
+    background: var(--color-navy-800);
+    border: 1px solid var(--color-navy-700);
+    border-radius: 8px;
+    padding: 0.625rem 0.875rem;
+    color: var(--color-slate-100);
+    font-size: 0.875rem;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .input:focus {
+    border-color: var(--color-amber-400);
+  }
+  .input::placeholder {
+    color: var(--color-slate-400);
+  }
+
+  .badge-active {
+    background: rgba(76, 215, 144, 0.15);
+    color: var(--color-emerald-400);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.625rem;
+    border-radius: 999px;
+  }
+
+  .badge-closed {
+    background: rgba(242, 116, 116, 0.15);
+    color: var(--color-red-400);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.625rem;
+    border-radius: 999px;
+  }
+}
